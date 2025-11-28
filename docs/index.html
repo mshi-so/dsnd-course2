@@ -1,8 +1,109 @@
 <html>
-    <head>
-        <title>Test</title>
-    </head>
-    <body>
-    <div>test</div>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>DSND Course 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-900 leading-relaxed">
+    <header
+      class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-24 px-6"
+    >
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-5xl font-extrabold mb-4">
+          How to make a country wealthier?
+        </h1>
+        <p class="text-xl opacity-90">
+          Understanding the key factors that contribute to a nation's economic
+          growth with Data Science.
+        </p>
+      </div>
+    </header>
+
+    <main
+      class="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-8 mt-10 mb-20"
+    >
+    <div class=" h-80 bg-[url('https://raw.githubusercontent.com/mshi-so/dsnd-course2/refs/heads/main/docs/header.png')] bg-cover bg-center">
+    </div>
+      <article class="prose lg:prose-lg prose-blue">
+        </br>
+        <h2 class="text-xl font-medium">Introduction</h2>
+      </br>
+        <p>
+          Traditionally the wealth of a country is grown by Labor, or Capital (including physical items such as tools and equipment) or both, but that doesn’t continue to grow indefinitely. A term called Total Factor Productivity (or TFP) is used to describe the portion of economic growth that does not come directly from Capital or Labor. For example, technological advancements can make it easier to produce goods and increase the efficiency of labor and can play a key part of economic growth. But what exactly is Total Factory Productivity? Is there such a thing as “Silver Bullet” to boost the growth of an economy?
+        </p>
+
+        </br>
+        <h2 class="text-xl font-medium">The Analysis</h2>
+      </br>
+        <p>
+          For my attempted analysis, I used the World Development Indicator database in DataBank from the World Bank Group, which is one of the most frequently used source by many researchers and policy makers. DataBank provides data for 1,500+ indicators across 11 domains, for simplicity purposes, I selected 31 indicators that are more relatable to me (hopefully relatable to you as well) across 5 domains and used GDP in current USD as the indicator for evaluating economy contribution.
+        </p>
+        <ul class="list-disc pl-10">
+            <li>Education (expenditures, school enrollment rate at different levels of institutions)</li>
+            <li>Health (expenditures and medical resources)</li>
+            <li>Infrastructure (Communication infrastructures like telephone, broadband and cellular; technology expenditure and R&D resources)</li>
+            <li>Labor (participation, composition and unemployment)</li>
+            <li>Trade (tourism and tariffs)</li>
+        </ul>
+        </br>
+        <h2 class="text-xl font-medium">What are the key aspects of TFP?</h2>
+      </br>
+        <p>
+          The 3 indicators of Communications infrastructure: Telephone, Broadband and Cellular play a critical role in GDP contribution. The invention of phone and internet years ago has fundamentally changed the landscape of world economy, however, as widely used as they are in US and other large economies today, they are still not widely adopted in many of the underdeveloped economies. More subscriptions to these services indicate the enhanced ability to conduct business and free-flow of information, which significantly improve the efficiency of the workforce, in many economies these industries also create value in direct employment, like hiring in e-commerce and online marketing.
+        </p>
+        <p>
+          Tourism is another factor that contributes to the growth of GDP. Tourism has benefits including contributing to economic growth in money spent on hotels, restaurants and other tourism related businesses, as well creating jobs in these industries in these economies. In 2024, Tourism accounted for 10% of the global economy and US$10.9 trillion to global GDP and supported 357 million jobs worldwide. [1]
+          </p>
+        </br>
+        <h2 class="text-xl font-medium">Does the TFP vary by economy?</h2>
+      </br>
+        <p>
+          Short answer is yes. I started the analysis by including all countries in the dataset, while they do confirm the importance of Communications Infrastructure and Tourism, many of the largest economies show some irregular patterns and wider spread on contributions from the top indicators towards GDP. This is likely due to at certain level of economic maturity, some other factors come into play and has a more significant impact that is reflected on GDP, for smaller to medium economies, the impact on these factors is more consistent.
+        </p>
+        <div class="grid grid-cols-2 gap-2">
+<img src="https://github.com/mshi-so/dsnd-course2/blob/main/docs/Fig%202.jpg?raw=true" alt="Scatter All" class="w-full h-auto"/>
+<img src="https://github.com/mshi-so/dsnd-course2/blob/main/docs/Fig%201.jpg?raw=true" alt="Scatter All" class="w-full h-auto"/>
+        </div>
+        </br>
+        <h2 class="text-xl font-medium">Is there a Silver Bullet?</h2>
+      </br>
+        <p>
+          Unfortunately no. Even after narrowing down the analysis to exclude the top 5% economies the coefficient is only 0.67 and the coefficient is worse if only using the Communication Infrastructure and Tourism indicators.[2] The slightly higher coefficient came from selecting an indicator that came from different domains:
+        </p>
+        <ul class="list-disc pl-10">
+            <li>Infrastructure: Telephone Subscriptions</li>
+            <li>Trade: Tourism Receipts</li>
+            <li>Education: Tertiary School Enrollment (%)</li>
+            <li>Infrastructure: R&D Expenditure (% of GDP)</li>
+            <li>Health: # of Physician per 1,000 People</li>
+        </ul>
+        <div class="grid grid-cols-3">
+            <img src="https://github.com/mshi-so/dsnd-course2/blob/main/docs/Fig%203.jpg?raw=true"  class="w-full h-auto">
+            <img src="https://github.com/mshi-so/dsnd-course2/blob/main/docs/Fig%206.jpg?raw=true"  class="w-full h-auto">
+            <img src="https://github.com/mshi-so/dsnd-course2/blob/main/docs/Fig%207.jpg?raw=true"  class="w-full h-auto">
+            <img src="https://github.com/mshi-so/dsnd-course2/blob/main/docs/Fig%208.jpg?raw=true"  class="w-full h-auto">
+            <img src="https://github.com/mshi-so/dsnd-course2/blob/main/docs/Fig%209.jpg?raw=true"  class="w-full h-auto">
+        </div>
+        </br>
+        <h2 class="text-xl font-medium">Bottom line?</h2>
+      </br>
+        <p>
+          UWhile Labor and Capital still play key roles in economy growth, TFP is undeniable a significant contributor. Especially in small to medium economies, the correlation between Labor Force Total actually decreased. However, there is no one size fits all, Infrastructure, Education, Trade and Health all play into the overall effect, and other factors specific to a country can also have significant impact. While this article highlights some of the key indicators, there are many indicators not included in this analysis, it is best for policy makers to take a balance approach considering the facts of the economy in question.
+        </p>
+        </br>
+        <h2 class="text-xl font-medium">Sources</h2>
+      </br>
+      <ul class="list-disc pl-10 break-all">
+        <li class="breakwords">[1] <a class=" text-blue-500 underline" href="https://www.worldbank.org/en/topic/competitiveness/brief/tourism-and-competitiveness#:~:text=Increase%20in%20revenues%20from%20tourism,of%20the%20blue/green%20economy">https://www.worldbank.org/en/topic/competitiveness/brief/tourism-and-competitiveness#:~:text=Increase%20in%20revenues%20from%20tourism,of%20the%20blue/green%20economy</a></li>
+        <li class="breakwords">[2] <a class=" text-blue-500 underline" href="https://github.com/mshi-so/dsnd-course2">https://github.com/mshi-so/dsnd-course2</a></li>
+      </ul>
+        
+
+
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 text-gray-600">© 2025 My Blog</footer>
+  </body>
 </html>
